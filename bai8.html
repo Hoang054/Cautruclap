@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="choi" type="button" value=choi onclick="play(this.id)">
+    <div id="hienthi"></div>
+    <script>
+        let songaunhien = 0;
+
+        function play(id) {
+            
+            
+            let sodau = +prompt("nhap so khoang tu:");
+            let socuoi = +prompt("den:");
+            songaunhien = Math.floor(Math.random() * (socuoi - sodau) + sodau);
+            while (true) {
+                let doan = +prompt("doan de:");
+
+                if (doan == songaunhien) {
+                    alert("chuc mung");
+                    document.getElementById('choi').value = 'choi lai';
+                    
+                    break;
+                } else if (doan > songaunhien) {
+                    document.getElementById("hienthi").innerHTML = "lon hon";
+                    alert("lon hon");
+                    true;
+                } else {
+                    document.getElementById("hienthi").innerHTML = "be hon";
+                    alert('be hon');
+                    true;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
